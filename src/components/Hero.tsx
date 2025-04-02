@@ -1,10 +1,7 @@
 import Image from 'next/image'
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
-import FreshProduce from '@/images/fresh.jpg' // Import an image of fresh produce
-// import securePayment from '@/images/secure-payment.png'
-// import fastDelivery from '@/images/fast-delivery.png'
-// import qualityGuarantee from '@/images/quality-guarantee.png'
+import fresh from "../images/fresh_cleaned.jpg"
 
 export function Hero() {
   return (
@@ -13,7 +10,7 @@ export function Hero() {
         {/* Left Column: Image */}
         <div className="relative">
           <Image
-            src={FreshProduce}
+            src={fresh}
             alt="Fresh, Organic Produce"
             className="rounded-lg shadow-xl object-cover object-center"
             style={{ width: '100%', height: 'auto', maxHeight: '500px' }}
@@ -23,7 +20,7 @@ export function Hero() {
         {/* Right Column: Text and Buttons */}
         <div className="text-center md:text-left">
           <h1 className="font-display text-4xl font-bold tracking-tight text-green-800 sm:text-5xl lg:text-6xl">
-            Savor the World's Finest Flavors
+            Savor the Worlds Finest Flavors
           </h1>
           <p className="mt-4 text-lg text-gray-700 leading-relaxed">
             Discover a curated selection of premium fruits and vegetables, sourced directly from the most fertile farms and orchards across the globe.  Experience freshness like never before.

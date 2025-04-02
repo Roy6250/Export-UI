@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 import { BriefcaseIcon, GlobeAltIcon, UsersIcon } from '@heroicons/react/24/solid'
-import Agriculture from "@/images/organic.webp"
+import Agriculture from "../images/organic.webp"
 
 const features = [
   {

@@ -2,7 +2,15 @@
 
 import React from 'react';
 
-const ProductCategoryCard = ({ title, description, icon, imageUrl,slug }) => {
+interface ProductCategoryCardProps {
+  title: string;
+  description: string;
+  icon: React.ReactNode; // If it's a React component (e.g., an SVG)
+  imageUrl: string;
+  slug: string;
+}
+
+const ProductCategoryCard: React.FC<ProductCategoryCardProps>= ({ title, description, icon, imageUrl,slug }) => {
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl">
       <div className="h-48 bg-orange-50 flex items-center justify-center">
@@ -85,7 +93,7 @@ export function SecondaryFeatures() {
               title={category.title}
               description={category.description}
               slug={category.slug}
-              icon={category.icon} imageUrl={undefined}            />
+              icon={category.icon}   imageUrl='none'        />
           ))}
         </div>
         

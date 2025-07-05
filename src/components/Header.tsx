@@ -74,7 +74,7 @@ export const Header = () => {
       <nav aria-label="Global" className="mx-auto max-w-7xl items-center justify-between p-6 lg:px-8">
         <div className="flex items-center justify-between">
           <div className="flex lg:flex-1">
-            <a href="/" className="text-green-700 font-medium text-sm lg:hidden">UMA EXPORTS</a>
+            <a href="/" className="text-green-700 font-medium text-sm lg:hidden">Tradeology Exim Solutions</a>
           </div>
           <div className="flex lg:hidden">
             <button
@@ -167,9 +167,9 @@ export const Header = () => {
         <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <a href="/" className="flex items-center">
-              <span className="font-bold text-green-700 text-xl">UMA</span>
-              <span className="font-bold text-gray-800 text-xl"> EXPORTS</span>
-              <span className="text-xs text-green-600 ml-1">LTD.</span>
+              <span className="font-bold text-green-700 text-xl">Tradeology&nbsp; </span>
+              <span className="font-bold text-gray-800 text-xl"> Exim Solutions</span>
+              <span className="text-xs text-green-600 ml-1">LLP</span>
             </a>
             <button
               type="button"

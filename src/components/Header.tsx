@@ -1,120 +1,3 @@
-// 'use client'
-
-// import Link from 'next/link'
-// import {
-//   Popover,
-//   PopoverButton,
-//   PopoverBackdrop,
-//   PopoverPanel,
-// } from '@headlessui/react'
-// import clsx from 'clsx'
-
-// import { Button } from '@/components/Button'
-// import { Container } from '@/components/Container'
-// import { Logo } from '@/components/Logo'
-// import { NavLink } from '@/components/NavLink'
-
-// function MobileNavLink({
-//   href,
-//   children,
-// }: {
-//   href: string
-//   children: React.ReactNode
-// }) {
-//   return (
-//     <PopoverButton as={Link} href={href} className="block w-full p-2">
-//       {children}
-//     </PopoverButton>
-//   )
-// }
-
-// function MobileNavIcon({ open }: { open: boolean }) {
-//   return (
-//     <svg
-//       aria-hidden="true"
-//       className="h-3.5 w-3.5 overflow-visible stroke-slate-700"
-//       fill="none"
-//       strokeWidth={2}
-//       strokeLinecap="round"
-//     >
-//       <path
-//         d="M0 1H14M0 7H14M0 13H14"
-//         className={clsx(
-//           'origin-center transition',
-//           open && 'scale-90 opacity-0',
-//         )}
-//       />
-//       <path
-//         d="M2 2L12 12M12 2L2 12"
-//         className={clsx(
-//           'origin-center transition',
-//           !open && 'scale-90 opacity-0',
-//         )}
-//       />
-//     </svg>
-//   )
-// }
-
-// function MobileNavigation() {
-//   return (
-//     <Popover>
-//       <PopoverButton
-//         className="relative z-10 flex h-8 w-8 items-center justify-center focus:not-data-focus:outline-hidden"
-//         aria-label="Toggle Navigation"
-//       >
-//         {({ open }) => <MobileNavIcon open={open} />}
-//       </PopoverButton>
-//       <PopoverBackdrop
-//         transition
-//         className="fixed inset-0 bg-slate-300/50 duration-150 data-closed:opacity-0 data-enter:ease-out data-leave:ease-in"
-//       />
-//       <PopoverPanel
-//         transition
-//         className="absolute inset-x-0 top-full mt-4 flex origin-top flex-col rounded-2xl bg-white p-4 text-lg tracking-tight text-slate-900 ring-1 shadow-xl ring-slate-900/5 data-closed:scale-95 data-closed:opacity-0 data-enter:duration-150 data-enter:ease-out data-leave:duration-100 data-leave:ease-in"
-//       >
-//         <MobileNavLink href="#features">About Us</MobileNavLink>
-//         <MobileNavLink href="#testimonials">Products</MobileNavLink>
-//         <MobileNavLink href="#pricing">Pricing</MobileNavLink>
-//         <hr className="m-2 border-slate-300/40" />
-//         <MobileNavLink href="/login">Sign in</MobileNavLink>
-//       </PopoverPanel>
-//     </Popover>
-//   )
-// }
-
-// export function Header() {
-//   return (
-//     <header className="py-10">
-//       <Container>
-//         <nav className="relative z-50 flex justify-between">
-//           <div className="flex items-center md:gap-x-12">
-//             <Link href="#" aria-label="Home">
-//               <Logo className="h-10 w-auto" />
-//             </Link>
-//             <div className="hidden md:flex md:gap-x-6">
-//               <NavLink href="#features">About Us</NavLink>
-//               <NavLink href="#testimonials">Products</NavLink>
-//               <NavLink href="#pricing">Pricing</NavLink>
-//             </div>
-//           </div>
-//           <div className="flex items-center gap-x-5 md:gap-x-8">
-//             <div className="hidden md:block">
-//               <NavLink href="/login">Sign in</NavLink>
-//             </div>
-//             <Button href="/register" color="blue">
-//               <span>
-//                 Get started <span className="hidden lg:inline">today</span>
-//               </span>
-//             </Button>
-//             <div className="-mr-1 md:hidden">
-//               <MobileNavigation />
-//             </div>
-//           </div>
-//         </nav>
-//       </Container>
-//     </header>
-//   )
-// }
 'use client'
 
 import { useState } from 'react';
@@ -131,25 +14,11 @@ import {
 } from '@headlessui/react';
 import { ChevronDownIcon, PhoneIcon } from '@heroicons/react/20/solid';
 import { XMarkIcon, Bars3Icon } from '@heroicons/react/24/outline';
-
+import { categories } from '@/lib/products';
+import Link from 'next/link';
 export const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
-  const productCategories = [
-    { name: "Sugar", description: "Premium quality sugar from sustainable sources", path: "/products/sugar" },
-    { name: "Spices", description: "Aromatic spices sourced from around the world", path: "/products/spices" },
-    { name: "Food Grains", description: "Nutritious and high-quality food grains", path: "/products/food-grains" },
-    { name: "Tea", description: "Fine teas from the best plantations", path: "/products/tea" },
-    { name: "Pulses", description: "Protein-rich pulses for healthy meals", path: "/products/pulses" },
-    { name: "Agro Feed", description: "Quality feed for livestock and agriculture", path: "/products/agro-feed" }
-  ];
-
-  // const callsToAction = [
-  //   { name: "View All Products", path: "/products" },
-  //   { name: "Download Catalog", path: "/catalog" },
-  //   { name: "Contact Sales", path: "/contact" },
-  // ];
-
   return (
 <header className="relative isolate z-10 bg-gradient-to-r from-green-100 via-green-200 to-green-300 shadow-sm transition-all duration-500">
 {/* Top Contact Bar */}
@@ -158,9 +27,9 @@ export const Header = () => {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-3 md:mb-0">
               <a href="/" className="flex items-center">
-                <span className="font-bold text-green-700 text-2xl">UMA</span>
-                <span className="font-bold text-gray-800 text-2xl"> EXPORTS</span>
-                <span className="text-sm text-green-600 ml-1">LTD.</span>
+                <span className="font-bold text-green-700 text-2xl">Tradeology&nbsp;</span>
+                <span className="font-bold text-gray-800 text-2xl">Exim Solutions</span>
+                <span className="text-sm text-green-600 ml-1">LLP</span>
               </a>
             </div>
             <div className="flex flex-col md:flex-row gap-6 md:gap-8">
@@ -169,7 +38,7 @@ export const Header = () => {
                   <PhoneIcon className="h-5 w-5" aria-hidden="true" />
                 </div>
                 <div>
-                  <div className="font-semibold text-gray-700 group-hover:text-orange-500 transition-colors">+91-33-22811396/97</div>
+                  <div className="font-semibold text-gray-700 group-hover:text-orange-500 transition-colors">+91 93290 05277</div>
                   <div className="text-xs text-gray-500">Make A Call</div>
                 </div>
               </div>
@@ -180,7 +49,7 @@ export const Header = () => {
                   </svg>
                 </div>
                 <div>
-                  <div className="font-semibold text-gray-700 group-hover:text-orange-500 transition-colors">info@umaexports.net.in</div>
+                  <div className="font-semibold text-gray-700 group-hover:text-orange-500 transition-colors">info@tradeology.co.in</div>
                   <div className="text-xs text-gray-500">Get An Estimate</div>
                 </div>
               </div>
@@ -192,7 +61,7 @@ export const Header = () => {
                   </svg>
                 </div>
                 <div>
-                  <div className="font-semibold text-gray-700 group-hover:text-orange-500 transition-colors">Kolkata - 700 017, India</div>
+                  <div className="font-semibold text-gray-700 group-hover:text-orange-500 transition-colors">Delhi - 110020, India</div>
                   <div className="text-xs text-gray-500">Location</div>
                 </div>
               </div>
@@ -223,9 +92,9 @@ export const Header = () => {
           <a href="/" className="text-sm font-semibold text-gray-900 hover:text-green-600 transition-colors">
             HOME
           </a>
-          <a href="/about" className="text-sm font-semibold text-gray-900 hover:text-green-600 transition-colors">
+          <Link href="/#about" className="text-sm font-semibold text-gray-900 hover:text-green-600 transition-colors">
             ABOUT US
-          </a>
+          </Link>
           
           <Popover>
             <PopoverButton className="flex items-center gap-x-1 text-sm font-semibold text-orange-500 hover:text-orange-600 transition-colors">
@@ -238,7 +107,7 @@ export const Header = () => {
               className="absolute inset-x-0 top-0 -z-10 bg-white pt-14 shadow-lg ring-1 ring-gray-900/5 transition data-[closed]:-translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
             >
               <div className="mx-auto grid max-w-7xl grid-cols-3 gap-x-4 px-6 py-10 lg:px-8 xl:gap-x-8">
-                {productCategories.map((item) => (
+                {categories.map((item) => (
                   <div key={item.name} className="group relative rounded-lg p-6 text-sm hover:bg-gray-50">
                     <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-green-50 group-hover:bg-white">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -271,22 +140,22 @@ export const Header = () => {
             </PopoverPanel>
           </Popover>
 
-          <a href="/policy" className="text-sm font-semibold text-gray-900 hover:text-green-600 transition-colors">
+          {/* <a href="/policy" className="text-sm font-semibold text-gray-900 hover:text-green-600 transition-colors">
             POLICY
-          </a>
-          <a href="/investors" className="text-sm font-semibold text-gray-900 hover:text-green-600 transition-colors">
+          </a> */}
+          {/* <a href="/investors" className="text-sm font-semibold text-gray-900 hover:text-green-600 transition-colors">
             INVESTORS
-          </a>
-          <a href="/public-issue" className="text-sm font-semibold text-gray-900 hover:text-green-600 transition-colors">
+          </a> */}
+          {/* <a href="/public-issue" className="text-sm font-semibold text-gray-900 hover:text-green-600 transition-colors">
             PUBLIC ISSUE
-          </a>
-          <a href="/careers" className="text-sm font-semibold text-gray-900 hover:text-green-600 transition-colors">
+          </a> */}
+          {/* <a href="/careers" className="text-sm font-semibold text-gray-900 hover:text-green-600 transition-colors">
             CAREERS
-          </a>
-          <a href="/exports" className="text-sm font-semibold text-gray-900 hover:text-green-600 transition-colors">
+          </a> */}
+          <Link href="/#exports" className="text-sm font-semibold text-gray-900 hover:text-green-600 transition-colors">
             EXPORTS
-          </a>
-          <a href="/contact" className="text-sm font-semibold text-gray-900 hover:text-green-600 transition-colors">
+          </Link>
+          <a href="#contact" className="text-sm font-semibold text-gray-900 hover:text-green-600 transition-colors">
             CONTACT US
           </a>
         </PopoverGroup>
@@ -320,19 +189,19 @@ export const Header = () => {
                 >
                   HOME
                 </a>
-                <a
-                  href="/about"
+                <Link
+                  href="/#about"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50"
                 >
                   ABOUT US
-                </a>
+                </Link>
                 <Disclosure as="div" className="-mx-3">
                   <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold text-orange-500 hover:bg-gray-50">
                     OUR PRODUCTS
                     <ChevronDownIcon aria-hidden="true" className="h-5 w-5 flex-none group-data-[open]:rotate-180" />
                   </DisclosureButton>
-                  {/* <DisclosurePanel className="mt-2 space-y-2">
-                    {[...productCategories, ...callsToAction].map((item) => (
+                  <DisclosurePanel className="mt-2 space-y-2">
+                    {[...categories].map((item) => (
                       <DisclosureButton
                         key={item.name}
                         as="a"
@@ -342,9 +211,9 @@ export const Header = () => {
                         {item.name}
                       </DisclosureButton>
                     ))}
-                  </DisclosurePanel> */}
+                  </DisclosurePanel>
                 </Disclosure>
-                <a
+                {/* <a
                   href="/policy"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50"
                 >
@@ -367,15 +236,15 @@ export const Header = () => {
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50"
                 >
                   CAREERS
-                </a>
-                <a
-                  href="/exports"
+                </a> */}
+                <Link
+                  href="/#exports"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50"
                 >
                   EXPORTS
-                </a>
+                </Link>
                 <a
-                  href="/contact"
+                  href="#contact"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50"
                 >
                   CONTACT US
@@ -386,7 +255,6 @@ export const Header = () => {
                   <div className="text-orange-500 mr-3">
                     <PhoneIcon className="h-5 w-5" aria-hidden="true" />
                   </div>
-                  <div className="font-semibold text-gray-700">+91-33-22811396/97</div>
                 </div>
                 <div className="flex items-center py-3">
                   <div className="text-orange-500 mr-3">
@@ -394,7 +262,7 @@ export const Header = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                   </div>
-                  <div className="font-semibold text-gray-700">info@umaexports.net.in</div>
+                  <div className="font-semibold text-gray-700">info@tradeology.co.in</div>
                 </div>
               </div>
             </div>

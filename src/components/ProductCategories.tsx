@@ -9,15 +9,9 @@ interface Category {
   featured?: boolean;
 }
 
+import {categories} from "../lib/products"
+
 export function ProductCategories() {
-  const categories: Category[] = [
-    { name: 'Fruits', slug: 'fruits', description: 'Fresh and juicy fruits from around the world', featured: true },
-    { name: 'Vegetables', slug: 'vegetables', description: 'Farm-fresh vegetables for your daily needs', featured: true },
-    { name: 'Exotic', slug: 'exotic', description: 'Rare and unique fruits from tropical regions', featured: true },
-    { name: 'Spices', slug: 'spices', description: 'Premium spices to enhance your culinary creations' },
-    { name: 'Pulses', slug: 'pulses', description: 'Protein-rich lentils and beans' },
-    { name: 'Agro Feed', slug: 'agro-feed', description: 'Quality feed for agricultural purposes' },
-  ];
 
   return (
     <div className="bg-white py-16">
@@ -27,7 +21,7 @@ export function ProductCategories() {
         </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
-          {categories.filter(cat => cat.featured).map((category) => (
+          {categories.map((category) => (
             <Link 
               key={category.slug}
               href={`/shop?category=${category.slug}`}

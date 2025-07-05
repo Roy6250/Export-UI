@@ -11,64 +11,26 @@ const testimonials = [
   [
     {
       content:
-        'TaxPal is so easy to use I can’t help but wonder if it’s really doing the things the government expects me to do.',
+        "Tradeology Exim has been a game-changer for our sourcing needs. Their attention to quality and documentation made the entire import process smooth and hassle-free.",
       author: {
-        name: 'Sheryl Berge',
-        role: 'CEO at Lynch LLC',
+        name: 'Julia Fernandez',
+        role: 'Head of Procurement, GreenHarvest Foods (Spain)',
         image: avatarImage1,
       },
     },
     {
       content:
-        'I’m trying to get a hold of someone in support, I’m in a lot of trouble right now and they are saying it has something to do with my books. Please get back to me right away.',
+        "We’ve worked with many exporters, but Tradeology stands out for their reliability and service. The shipment of pulses and grains arrived on time and in perfect condition.",
       author: {
-        name: 'Amy Hahn',
-        role: 'Director at Velocity Industries',
-        image: avatarImage4,
-      },
-    },
-  ],
-  [
-    {
-      content:
-        'The best part about TaxPal is every time I pay my employees, my bank balance doesn’t go down like it used to. Looking forward to spending this extra cash when I figure out why my card is being declined.',
-      author: {
-        name: 'Leland Kiehn',
-        role: 'Founder of Kiehn and Sons',
-        image: avatarImage5,
-      },
-    },
-    {
-      content:
-        'There are so many things I had to do with my old software that I just don’t do at all with TaxPal. Suspicious but I can’t say I don’t love it.',
-      author: {
-        name: 'Erin Powlowski',
-        role: 'COO at Armstrong Inc',
+        name: 'Ahmed Al-Masri',
+        role: 'Managing Director, Al-Masri Trading Co. (UAE)',
         image: avatarImage2,
       },
     },
   ],
-  [
-    {
-      content:
-        'I used to have to remit tax to the EU and with TaxPal I somehow don’t have to do that anymore. Nervous to travel there now though.',
-      author: {
-        name: 'Peter Renolds',
-        role: 'Founder of West Inc',
-        image: avatarImage3,
-      },
-    },
-    {
-      content:
-        'This is the fourth email I’ve sent to your support team. I am literally being held in jail for tax fraud. Please answer your damn emails, this is important.',
-      author: {
-        name: 'Amy Hahn',
-        role: 'Director at Velocity Industries',
-        image: avatarImage4,
-      },
-    },
-  ],
+  // Add more columns if needed...
 ]
+
 
 function QuoteIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -82,63 +44,57 @@ export function Testimonials() {
   return (
     <section
       id="testimonials"
-      aria-label="What our customers are saying"
-      className="bg-slate-50 py-20 sm:py-32"
+      aria-label="What our clients are saying"
+      className="bg-gradient-to-b from-green-100 to-green-200 sm:py-10 "
     >
       <Container>
         <div className="mx-auto max-w-2xl md:text-center">
-          <h2 className="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">
-            Loved by businesses worldwide.
+          <h2 className="font-display text-3xl tracking-tight text-green-800 sm:text-4xl">
+            Trusted by Clients Across the Globe
           </h2>
-          <p className="mt-4 text-lg tracking-tight text-slate-700">
-            Our software is so simple that people can’t help but fall in love
-            with it. Simplicity is easy when you just skip tons of
-            mission-critical features.
+          <p className="mt-4 text-lg tracking-tight text-green-700">
+            Businesses, distributors, and importers worldwide rely on Tradeology Exim Solutions for timely deliveries, top-tier quality, and complete export support.
           </p>
         </div>
         <ul
           role="list"
-          className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 sm:gap-8 lg:mt-20 lg:max-w-none lg:grid-cols-3"
+          className="mx-auto mt-16 grid max-w-6xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 sm:gap-8"
         >
-          {testimonials.map((column, columnIndex) => (
-            <li key={columnIndex}>
-              <ul role="list" className="flex flex-col gap-y-6 sm:gap-y-8">
-                {column.map((testimonial, testimonialIndex) => (
-                  <li key={testimonialIndex}>
-                    <figure className="relative rounded-2xl bg-white p-6 shadow-xl shadow-slate-900/10">
-                      <QuoteIcon className="absolute top-6 left-6 fill-slate-100" />
-                      <blockquote className="relative">
-                        <p className="text-lg tracking-tight text-slate-900">
-                          {testimonial.content}
-                        </p>
-                      </blockquote>
-                      <figcaption className="relative mt-6 flex items-center justify-between border-t border-slate-100 pt-6">
-                        <div>
-                          <div className="font-display text-base text-slate-900">
-                            {testimonial.author.name}
-                          </div>
-                          <div className="mt-1 text-sm text-slate-500">
-                            {testimonial.author.role}
-                          </div>
-                        </div>
-                        <div className="overflow-hidden rounded-full bg-slate-50">
-                          <Image
-                            className="h-14 w-14 object-cover"
-                            src={testimonial.author.image}
-                            alt=""
-                            width={56}
-                            height={56}
-                          />
-                        </div>
-                      </figcaption>
-                    </figure>
-                  </li>
-                ))}
-              </ul>
+          {testimonials.flat().map((testimonial, index) => (
+            <li key={index}>
+              <figure className="relative rounded-2xl bg-white p-6 shadow-xl shadow-green-900/10 h-full">
+                <QuoteIcon className="absolute top-6 left-6 fill-green-100" />
+                <blockquote className="relative">
+                  <p className="text-lg tracking-tight text-green-900">
+                    {testimonial.content}
+                  </p>
+                </blockquote>
+                <figcaption className="relative mt-6 flex items-center justify-between border-t border-green-100 pt-6">
+                  <div>
+                    <div className="font-display text-base text-green-900 font-semibold">
+                      {testimonial.author.name}
+                    </div>
+                    <div className="mt-1 text-sm text-green-600">
+                      {testimonial.author.role}
+                    </div>
+                  </div>
+                  <div className="overflow-hidden rounded-full bg-green-50">
+                    <Image
+                      className="h-14 w-14 object-cover"
+                      src={testimonial.author.image}
+                      alt={testimonial.author.name}
+                      width={56}
+                      height={56}
+                    />
+                  </div>
+                </figcaption>
+              </figure>
             </li>
           ))}
         </ul>
+
       </Container>
     </section>
   )
 }
+

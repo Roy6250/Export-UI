@@ -11,7 +11,7 @@ export const products: Product[] = [
     price: '$4.99/lb',
     priceValue: 4.99,
     image: '/images/mango.jpg',
-    category: 'fruits',
+    category: 'fruits-vegetables',
     badge: 'Best Seller',
     nutrition: {
       calories: 60,
@@ -32,7 +32,7 @@ export const products: Product[] = [
     price: '$3.99/each',
     priceValue: 3.99,
     image: '/images/avocado.jpg',
-    category: 'fruits',
+    category: 'fruits-vegetables',
     badge: 'Organic',
     nutrition: {
       calories: 160,
@@ -53,7 +53,7 @@ export const products: Product[] = [
     price: '$7.99/each',
     priceValue: 7.99,
     image: '/images/dragon-fruit.jpg',
-    category: 'exotic',
+    category: 'fruits-vegetables',
     badge: 'Limited',
     nutrition: {
       calories: 60,

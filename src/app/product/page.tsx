@@ -14,14 +14,19 @@ export default function ShopPage({
   const category = searchParams.category || 'all';
   const products = category === 'all' ? getAllProducts() : getProductsByCategory(category);
   
-  const categories = [
-    { name: 'Fruits', slug: 'fruits', active: category === 'fruits' },
-    { name: 'Vegetables', slug: 'vegetables', active: category === 'vegetables' },
-    { name: 'Exotic', slug: 'exotic', active: category === 'exotic' },
-    { name: 'Organic', slug: 'organic', active: category === 'organic' },
-    { name: 'Dried Fruits', slug: 'dried-fruits', active: category === 'dried-fruits' },
-    { name: 'Nuts', slug: 'nuts', active: category === 'nuts' },
+  const productCategories = [
+    { name: "Spices", slug: "spices", description: "Aromatic spices sourced from around the world", path: "/products/spices" },
+    { name: "Pulses & Grains", slug: "pulses-grains", description: "Nutritious and high-quality pulses and grains", path: "/products/pulses-grains" },
+    { name: "Processed Foods", slug: "processed-foods", description: "Convenient and ready-to-eat packaged food products", path: "/products/processed-foods" },
+    { name: "Fruits & Vegetables", slug: "fruits-vegetables", description: "Fresh and organic fruits and vegetables for a healthy lifestyle", path: "/products/fruits-vegetables" },
+    { name: "Indian Handcrafts", slug: "indian-handcrafts", description: "Traditional and authentic handmade Indian crafts", path: "/products/indian-handcrafts" }
   ];
+  
+  const categories = productCategories.map(cat => ({
+    ...cat,
+    active: category === cat.slug
+  }));
+  
 
   return (
     <div className="bg-white min-h-screen">

@@ -4,7 +4,7 @@ import { ChevronRight } from 'lucide-react';
 type Category = {
   name: string;
   slug: string;
-  image?: string;
+  image?: any;
 };
 
 type CategorySidebarProps = {

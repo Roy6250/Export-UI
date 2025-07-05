@@ -21,7 +21,8 @@ export async function generateStaticParams() {
 
 export default function ProductPage({ params }: { params: { slug: string } }) {
   const product = getProductBySlug(params.slug);
-  
+  console.log(product)
+  console.log(params.slug)
   if (!product) {
     notFound();
   }
@@ -34,7 +35,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
   return (
     <>
     <Header/>
-    <div className="bg-white py-6">
+    <div className="bg-gradient-to-b from-green-100 to-green-200 py-6">
       
       <Container>
         {/* Breadcrumb */}

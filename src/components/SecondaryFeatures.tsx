@@ -6,17 +6,25 @@ interface ProductCategoryCardProps {
   title: string;
   description: string;
   icon: React.ReactNode; // If it's a React component (e.g., an SVG)
-  imageUrl: string;
+  image: any;
   slug: string;
 }
+import Image from 'next/image'
 
-const ProductCategoryCard: React.FC<ProductCategoryCardProps>= ({ title, description, icon, imageUrl,slug }) => {
+import { categories } from '@/lib/products';
+
+const ProductCategoryCard: React.FC<ProductCategoryCardProps>= ({ title, description, icon, image,slug }) => {
+  console.log(image)
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl">
-      <div className="h-48 bg-orange-50 flex items-center justify-center">
-        {imageUrl ? (
-          <img src={imageUrl} alt={title} className="max-h-32 w-auto" />
-        ) : (
+      <div className="h-48  relative bg-orange-50 flex items-center justify-center">
+        {image ? (
+          <Image
+          src={image}
+          alt={title}
+          fill
+          className="object-cover"
+        />        ) : (
           <div className="text-orange-500 text-5xl">{icon}</div>
         )}
       </div>
@@ -38,47 +46,12 @@ const ProductCategoryCard: React.FC<ProductCategoryCardProps>= ({ title, descrip
 };
 
 export function SecondaryFeatures() {
-  const categories = [
-    {
-      title: "Fruits",
-      description: "Fresh and juicy fruits from around the world",
-      slug:'fruits',
-      icon: "🧁"
-    },
-    {
-      title: "Spices",
-      slug:'spices',
-      description: "Authentic Indian spices with distinctive aroma and flavor profiles, carefully selected to enhance your cooking experience.",
-      icon: "🌶️"
-    },
-    {
-      title: "Vegetables",
-      slug:'vegetables',
-      description: "High-quality staple grains including rice, wheat, and millets, sourced directly from farmers for maximum freshness.",
-      icon: "🌾"
-    },
-    {
-      title: "Exotic",
-      slug:'exotic',
-      description: "Specially blended teas combining strength, aroma and expertise, offering a complete tea solution for connoisseurs.",
-      icon: "🍵"
-    },
-    {
-      title: "Pulses",
-      slug:'pulses',
-      description: "Original, high-quality pulses and lentils that meet international standards, perfect for nutritious meals.",
-      icon: "🥣"
-    },
-    {
-      title: "Agro Feed",
-      slug:'agro-feed',
-      description: "Premium soybean meal and agricultural feed products for livestock, known for consistent quality and nutritional value.",
-      icon: "🌱"
-    }
-  ];
-
+  const firstCategorySlug = categories[0]?.slug;
+  const href = `/category/${firstCategorySlug}`;
+  console.log(categories)
+  
   return (
-    <section className="bg-gradient-to-b from-green-200 to-green-100 py-16">
+    <section id="exports" className="bg-gradient-to-b from-green-200 to-green-100 py-16">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <span className="text-orange-600 font-semibold uppercase tracking-wider">WHAT WE OFFER</span>
@@ -90,16 +63,16 @@ export function SecondaryFeatures() {
           {categories.map((category, index) => (
             <ProductCategoryCard 
               key={index}
-              title={category.title}
+              title={category.name}
               description={category.description}
               slug={category.slug}
-              icon={category.icon}   imageUrl='none'        />
+              icon={category.icon}   image={category.image}       />
           ))}
         </div>
         
         <div className="mt-16 text-center">
           <a 
-            href="/category/fruits" 
+            href={`/category/${categories[0].slug}`}            
             className="bg-black hover:bg-orange-700 text-white font-medium py-3 px-8 rounded-lg inline-block transition-colors duration-300"
           >
             View All Products

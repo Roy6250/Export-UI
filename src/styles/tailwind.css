@@ -1,6 +1,15 @@
 @import 'tailwindcss';
 
+
 @plugin '@tailwindcss/forms';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
 
 @theme {
   --text-*: initial;

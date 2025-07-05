@@ -21,6 +21,7 @@ export default function CategoryPage({ params }: { params: { slug: string } }) {
   const categories = getAllCategories();
   const currentCategory = categories.find(cat => cat.slug === params.slug);
   
+  console.log(categories)
   if (!currentCategory) {
     notFound();
   }
@@ -30,7 +31,7 @@ export default function CategoryPage({ params }: { params: { slug: string } }) {
   return (
     <>
     <Header/>
-    <div className="bg-white min-h-screen">
+    <div className="bg-gradient-to-b from-green-100 to-green-200 min-h-screen">
       <Container>
         <div className="py-6">
           <h1 className="font-display text-4xl font-bold text-green-800 mb-8">

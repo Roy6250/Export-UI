@@ -17,8 +17,8 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 210 100% 35%;
+    --primary-foreground: 0 0% 100%;
 
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
@@ -37,6 +37,21 @@ All colors MUST be HSL.
     --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
+    
+    /* Lucify Blue-Green Design System */
+    --hero-gradient: linear-gradient(135deg, 220 100% 20%, 190 100% 25%, 160 100% 35%);
+    --footer-gradient: linear-gradient(135deg, 220 100% 15%, 190 100% 20%);
+    --accent-gradient: linear-gradient(90deg, 200 100% 40%, 170 100% 45%);
+    --particle-blue: 210 100% 60%;
+    --particle-green: 160 100% 50%;
+    --tech-blue: 220 100% 25%;
+    --section-bg: 250 20% 98%;
+    
+    /* Typography */
+    --heading-primary: 220 100% 15%;
+    --text-primary: 220 20% 20%;
+    --text-secondary: 220 15% 50%;
+    --text-light: 0 0% 100%;
 
     --sidebar-background: 0 0% 98%;
 
@@ -90,8 +105,8 @@ All colors MUST be HSL.
     --sidebar-accent: 240 3.7% 15.9%;
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
+     --sidebar-ring: 217.2 91.2% 59.8%;
+   }
 }
 
 @layer base {
@@ -101,5 +116,43 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .hero-gradient {
+    background: var(--hero-gradient);
+  }
+  
+  .footer-gradient {
+    background: var(--footer-gradient);
+  }
+  
+  .accent-gradient {
+    background: var(--accent-gradient);
+  }
+  
+  .text-heading-primary {
+    color: hsl(var(--heading-primary));
+  }
+  
+  .text-primary-custom {
+    color: hsl(var(--text-primary));
+  }
+  
+  .text-secondary-custom {
+    color: hsl(var(--text-secondary));
+  }
+  
+  .text-light-custom {
+    color: hsl(var(--text-light));
+  }
+  
+  .bg-section {
+    background-color: hsl(var(--section-bg));
+  }
+  
+  .bg-tech-blue {
+    background-color: hsl(var(--tech-blue));
   }
 }

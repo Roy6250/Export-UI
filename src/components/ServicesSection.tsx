@@ -1,100 +1,63 @@
-import aiTech from "@/assets/ai-tech.jpg";
-import managedIt from "@/assets/managed-it.jpg";
-import softwareDev from "@/assets/software-dev.jpg";
-import networkInfra from "@/assets/network-infra.jpg";
+import teamOffice from "@/assets/team-office.jpg";
+import techHands from "@/assets/tech-hands.jpg";
 
 const ServicesSection = () => {
-  const services = [
-    {
-      id: 1,
-      title: "AI",
-      image: aiTech,
-      className: "col-span-2 row-span-2 relative"
-    },
-    {
-      id: 2, 
-      title: "Managed IT Services",
-      image: managedIt,
-      className: "col-span-2 row-span-1 relative"
-    },
-    {
-      id: 3,
-      title: "Software Development", 
-      image: softwareDev,
-      className: "col-span-2 row-span-1 relative"
-    },
-    {
-      id: 4,
-      title: "Network Infrastructure",
-      image: networkInfra,
-      className: "col-span-2 row-span-2 relative"
-    }
-  ];
-
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-6">
-        <div className="mb-12">
-          <h3 className="text-lg font-medium text-primary mb-4">Our IT Services</h3>
-          <h2 className="text-4xl md:text-5xl font-bold text-heading-primary leading-tight">
-            COMPREHENSIVE SOLUTIONS TAILORED
-            <br />
-            TO YOUR NEEDS
-          </h2>
+        {/* First Service Block */}
+        <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
+          <div>
+            <img 
+              src={teamOffice} 
+              alt="Team working in modern office" 
+              className="w-full h-80 object-cover rounded-lg"
+            />
+          </div>
+          <div>
+            <h2 className="text-4xl font-bold text-heading-primary mb-6">
+              Committed to Delivering
+              <br />
+              Excellent Products
+            </h2>
+            <p className="text-secondary-custom leading-relaxed mb-6">
+              We are dedicated to creating innovative solutions that transform businesses 
+              through cutting-edge technology and exceptional user experiences. Our team 
+              of experts works tirelessly to deliver products that exceed expectations 
+              and drive meaningful results for our clients.
+            </p>
+            <p className="text-secondary-custom leading-relaxed">
+              With a focus on quality, reliability, and innovation, we ensure every 
+              project meets the highest standards of excellence and delivers lasting value.
+            </p>
+            <div className="mt-8">
+              <button className="text-primary font-medium hover:underline">
+                Join Now →
+              </button>
+            </div>
+          </div>
         </div>
-
-        {/* Asymmetric Grid Layout */}
-        <div className="grid grid-cols-4 grid-rows-3 gap-4 h-[600px]">
-          {/* AI - Large card top left */}
-          <div className="col-span-2 row-span-2 relative rounded-2xl overflow-hidden group">
-            <img 
-              src={services[0].image}
-              alt={services[0].title}
-              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-            <div className="absolute bottom-6 left-6">
-              <h3 className="text-white text-2xl font-semibold">{services[0].title}</h3>
-            </div>
+        
+        {/* Second Service Block */}
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="order-2 md:order-1">
+            <h3 className="text-2xl font-bold text-heading-primary mb-4">
+              COMPREHENSIVE SOLUTIONS TAILORED
+              <br />
+              TO YOUR NEEDS
+            </h3>
+            <p className="text-secondary-custom leading-relaxed">
+              Our comprehensive approach ensures that every aspect of your digital 
+              transformation is carefully planned and executed with precision. We 
+              understand that each business has unique challenges and requirements.
+            </p>
           </div>
-
-          {/* Network Infrastructure - Large card top right */}
-          <div className="col-span-2 row-span-2 relative rounded-2xl overflow-hidden group">
+          <div className="order-1 md:order-2">
             <img 
-              src={services[3].image}
-              alt={services[3].title}
-              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+              src={techHands} 
+              alt="Technology and innovation" 
+              className="w-full h-64 object-cover rounded-lg"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-            <div className="absolute bottom-6 left-6">
-              <h3 className="text-white text-xl font-semibold">{services[3].title}</h3>
-            </div>
-          </div>
-
-          {/* Managed IT Services - Medium card bottom left */}
-          <div className="col-span-2 row-span-1 relative rounded-2xl overflow-hidden group">
-            <img 
-              src={services[1].image}
-              alt={services[1].title}
-              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-            <div className="absolute bottom-4 left-6">
-              <h3 className="text-white text-lg font-semibold">{services[1].title}</h3>
-            </div>
-          </div>
-
-          {/* Software Development - Medium card bottom right */}
-          <div className="col-span-2 row-span-1 relative rounded-2xl overflow-hidden group">
-            <img 
-              src={services[2].image}
-              alt={services[2].title}
-              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-            <div className="absolute bottom-4 left-6">
-              <h3 className="text-white text-lg font-semibold">{services[2].title}</h3>
-            </div>
           </div>
         </div>
       </div>

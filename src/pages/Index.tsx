@@ -1,7 +1,6 @@
 import LucifyHeader from "@/components/LucifyHeader";
 import HeroSection from "@/components/HeroSection";
 import ServicesSection from "@/components/ServicesSection";
-import AboutSection from "@/components/AboutSection";
 import SolutionsGrid from "@/components/SolutionsGrid";
 import StatsSection from "@/components/StatsSection";
 import BrandsSection from "@/components/BrandsSection";
@@ -16,7 +15,6 @@ const Index = () => {
       <LucifyHeader />
       <HeroSection />
       <ServicesSection />
-      <AboutSection />
       <SolutionsGrid />
       <StatsSection />
       <BrandsSection />

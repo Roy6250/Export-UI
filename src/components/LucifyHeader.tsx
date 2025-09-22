@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Logo from "@/assets/tradeology_icon-removebg-preview.png"; // Changed to transparent version
-
+import Image from "next/image";
 const LucifyHeader = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
@@ -8,7 +8,7 @@ const LucifyHeader = () => {
         <div className="flex items-center justify-between">
           {/* Logo + Text */}
           <div className="flex items-center space-x-3">
-            <img src={Logo} alt="Tradeology Logo" className="h-10 w-auto" />
+            <Image src={Logo} alt="Tradeology Logo" className="h-10 w-auto" />
             <div className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#0070e0] via-[#00a68d] to-[#71e000]">
               Tradeology
             </div>

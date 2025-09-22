@@ -15,7 +15,7 @@ const Index = () => {
       <LucifyHeader />
       <HeroSection />
       <ServicesSection />
-      <SolutionsGrid />
+      {/* <SolutionsGrid /> */}
       <StatsSection />
       <BrandsSection />
       <FocusSection />

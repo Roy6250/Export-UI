@@ -14,13 +14,13 @@ const Index = () => {
     <div className="min-h-screen bg-white">
       <LucifyHeader />
       <HeroSection />
-      <ServicesSection />
-      {/* <SolutionsGrid /> */}
+      {/* <ServicesSection /> */}
+      <SolutionsGrid />
       <StatsSection />
       <BrandsSection />
       <FocusSection />
-      <TechInsightsSection />
-      <PartnersSection />
+      {/* <TechInsightsSection />
+      <PartnersSection /> */}
       <LucifyFooter />
     </div>
   );

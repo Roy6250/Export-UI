@@ -1,26 +1,19 @@
 import { motion } from "framer-motion";
 import heroBackground from "@/assets/hero_logo.png";
-import Image from "next/image";
 
 const HeroSection = () => {
   return (
     <section className="bg-white relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
-          <motion.div
-            className="w-full h-full relative"
-            initial={{ scale: 1.2, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 1.5, ease: "easeOut" }}
-          >
-            <Image
-              src={heroBackground}
-              alt="Technology particle background"
-              fill
-              className="object-cover"
-              priority
-            />
-          </motion.div>
+        <motion.img 
+          src={heroBackground} 
+          alt="Technology particle background" 
+          className="w-full h-full object-cover"
+          initial={{ scale: 1.2, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+        />
         <div className="absolute inset-0 hero-gradient "></div>
       </div>
       

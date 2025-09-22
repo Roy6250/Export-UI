@@ -3,7 +3,6 @@ import RODD from "@/assets/APEDA_logo.png";
 import GYD from "@/assets/Indian_Institute_of_Foreign_Trade_logo.png";
 import PLATFORM from "@/assets/png-transparent-government-of-india-ministry-of-micro-small-and-medium-enterprises-small-business-industry-india-text-logo-monochrome-thumbnail.png"
 import ALAYA from "@/assets/1200x600wa.png";
-import Image from "next/image";
 
 const BrandsSection = () => {
   const brandImages = [
@@ -26,7 +25,7 @@ const BrandsSection = () => {
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center">
           {brandImages.map((brand, index) => (
             <div key={index} className="flex items-center justify-center">
-              <Image
+              <img
                 src={brand.src}
                 alt={brand.alt}
                 className="h-20 object-contain"

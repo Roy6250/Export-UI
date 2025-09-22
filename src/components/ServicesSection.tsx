@@ -1,6 +1,5 @@
 import teamOffice from "@/assets/team-office.jpg";
 import techHands from "@/assets/tech-hands.jpg";
-import Image from "next/image";
 const ServicesSection = () => {
   return (
     <section className="py-20 bg-white">
@@ -8,7 +7,7 @@ const ServicesSection = () => {
         {/* First Service Block */}
         <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
           <div>
-            <Image 
+            <img 
               src={teamOffice} 
               alt="Team working in modern office" 
               className="w-full h-80 object-cover rounded-lg"
@@ -53,7 +52,7 @@ const ServicesSection = () => {
             </p>
           </div>
           <div className="order-1 md:order-2">
-            <Image 
+            <img 
               src={techHands} 
               alt="Technology and innovation" 
               className="w-full h-64 object-cover rounded-lg"

@@ -155,4 +155,9 @@ All colors MUST be HSL.
   .bg-tech-blue {
     background-color: hsl(var(--tech-blue));
   }
+  /* globals.css or Tailwind config (if using custom gradients) */
+  .bg-tradeology {
+    background: linear-gradient(135deg, #00FF00 0%, #00B894 40%, #0984E3 100%);
+  }
+
 }

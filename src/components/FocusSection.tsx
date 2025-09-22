@@ -1,16 +1,36 @@
 const FocusSection = () => {
   const features = [
+    // {
+    //   title: "Your Global Trade Partner",
+    //   description: "We simplify export-import operations, enabling businesses to focus on growth while we manage their trade efficiently."
+    // },
     {
-      title: "Process Automation",
-      description: "Streamline your workflows with intelligent automation solutions that reduce manual effort and increase efficiency."
+      title: "Expert Team",
+      description: "Our professionals, trained at the Indian Institute of Foreign Trade (IIFT), bring deep market knowledge and expertise to every transaction."
     },
     {
-      title: "Cloud Migration", 
-      description: "Seamlessly transition your infrastructure to the cloud with our expert guidance and proven methodologies."
+      title: "Verified Supplier Network",
+      description: "We collaborate only with trusted, pre-verified suppliers, ensuring high-quality and compliant products."
     },
     {
-      title: "Digital Strategy",
-      description: "Develop comprehensive digital strategies that align with your business goals and drive sustainable growth."
+      title: "Quality & Compliance",
+      description: "All shipments are pre-inspected, with Organic and Halal certifications where applicable, minimizing customs rejections."
+    },
+    // {
+    //   title: "Reliable Logistics",
+    //   description: "Partnered with top-rated carriers, we maintain over 95% on-time delivery, with backup options to handle delays."
+    // },
+    // {
+    //   title: "Transparent Documentation",
+    //   description: "We provide error-free invoices, Certificates of Origin, and phytosanitary documents upfront, with no hidden charges."
+    // },
+    // {
+    //   title: "Seamless Communication",
+    //   description: "Dedicated account managers ensure responses within 24 hours, fluent in English and available across time zones."
+    // },
+    {
+      title: "Customer-Centric Support",
+      description: "Single-point contacts and flexible trade terms foster long-term partnerships and 100% customer satisfaction."
     }
   ];
 
@@ -19,25 +39,24 @@ const FocusSection = () => {
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-16">
           <div>
-            <h2 className="text-4xl font-bold text-heading-primary mb-8">
+            <h2 style={{ color: "#043d4a" }} className="text-4xl font-bold mb-8">
               FOCUS ON YOUR MISSION,
               <br />
-              LET US HANDLE YOUR TECH.
+              LET US HANDLE YOUR TRADE.
             </h2>
-            <p className="text-secondary-custom leading-relaxed mb-8">
-              While you concentrate on growing your business and serving your customers, 
-              we take care of all the technical complexities. Our team of experts ensures 
-              your technology infrastructure is robust, scalable, and future-ready.
+            <p style={{ color: "#043d4a" }} className="leading-relaxed mb-8">
+              Tradeology is a results-driven export-import house built on credibility, compliance, and long-term partnership. 
+              Our team combines deep trade expertise, verified supplier networks, and rigorous quality systems to make global trade simple, safe, and profitable for our buyers and partners.
             </p>
           </div>
           
           <div className="space-y-8">
             {features.map((feature, index) => (
-              <div key={index} className="border-l-4 border-primary pl-6">
-                <h3 className="text-xl font-semibold text-heading-primary mb-3">
+              <div key={index} className="border-l-4 pl-6" style={{ borderColor: "#0f8fb9" }}>
+                <h3 style={{ color: "#043d4a" }} className="text-xl font-semibold mb-3">
                   {feature.title}
                 </h3>
-                <p className="text-secondary-custom leading-relaxed">
+                <p style={{ color: "#043d4a" }} className="leading-relaxed">
                   {feature.description}
                 </p>
               </div>
@@ -47,6 +66,6 @@ const FocusSection = () => {
       </div>
     </section>
   );
-};
+}
 
 export default FocusSection;

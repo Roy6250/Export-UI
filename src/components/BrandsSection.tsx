@@ -1,10 +1,16 @@
+import SALVUS from "@/assets/17052955243640.png"
+import RODD from "@/assets/APEDA_logo.png";
+import GYD from "@/assets/Indian_Institute_of_Foreign_Trade_logo.png";
+import PLATFORM from "@/assets/png-transparent-government-of-india-ministry-of-micro-small-and-medium-enterprises-small-business-industry-india-text-logo-monochrome-thumbnail.png"
+import ALAYA from "@/assets/1200x600wa.png";
+
 const BrandsSection = () => {
-  const brands = [
-    "SALVUS",
-    "RODD",
-    "gyd",
-    "PLATFORM",
-    "ALAYA"
+  const brandImages = [
+    { src: SALVUS, alt: "SALVUS" },
+    { src: RODD, alt: "RODD" },
+    { src: GYD, alt: "GYD" },
+    { src: PLATFORM, alt: "PLATFORM" },
+    { src: ALAYA, alt: "ALAYA" }
   ];
 
   return (
@@ -17,13 +23,14 @@ const BrandsSection = () => {
         </div>
         
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center">
-          {brands.map((brand, index) => (
-            <div key={index} className="text-center">
-              <div className="bg-white rounded-lg p-6 h-20 flex items-center justify-center shadow-sm hover:shadow-md transition-shadow">
-                <span className="text-lg font-semibold text-secondary-custom">
-                  {brand}
-                </span>
-              </div>
+          {brandImages.map((brand, index) => (
+            <div key={index} className="flex items-center justify-center">
+              <img
+                src={brand.src}
+                alt={brand.alt}
+                className="h-20 object-contain"
+                style={{ backgroundColor: "transparent" }}
+              />
             </div>
           ))}
         </div>

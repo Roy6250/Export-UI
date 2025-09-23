@@ -49,7 +49,7 @@ const HeroSection = () => {
       </div>
       
       {/* Lucify Vertical Text */}
-      <motion.div 
+      {/* <motion.div 
         className="absolute right-8 top-1/2 transform -translate-y-1/2 -rotate-90 origin-center"
         initial={{ x: 80, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
@@ -58,7 +58,7 @@ const HeroSection = () => {
         <span className="text-4xl font-bold text-light-custom tracking-wider">
           Tradeology
         </span>
-      </motion.div>
+      </motion.div> */}
     </section>
   );
 };
